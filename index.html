@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TERRAKON PARTS - Repuestos y componentes para maquinaria pesada. Potencia y respaldo para tu maquinaria.">
+  <title>TERRAKON PARTS | Potencia y respaldo para tu maquinaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div>Repuestos y componentes para maquinaria pesada</div>
+    <a href="https://wa.me/51931869618?text=Hola%20TERRAKON%20PARTS,%20quiero%20consultar%20por%20un%20repuesto." target="_blank">WhatsApp: +51 931 869 618</a>
+  </div>
+
+  <header class="header">
+    <a class="logo" href="#inicio" aria-label="TERRAKON PARTS">
+      <span class="logo-mark">T</span>
+      <span><strong>TERRAKON</strong><small>PARTS</small></span>
+    </a>
+    <button class="menu-btn" aria-label="Abrir menú">☰</button>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="nav-wa" href="https://wa.me/51931869618" target="_blank">Consultar por WhatsApp</a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">REPUESTOS PARA MAQUINARIA PESADA</p>
+        <h1>Potencia y respaldo<br><span>para tu maquinaria.</span></h1>
+        <p class="hero-text">Encuentra repuestos y componentes por código, marca, aplicación o tipo de pieza.</p>
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="Buscar código, pieza, marca o modelo..." aria-label="Buscar repuesto">
+          <button onclick="searchProducts()">BUSCAR</button>
+        </div>
+        <div class="quick-search">
+          <span>Buscar:</span>
+          <button onclick="quickSearch('AT310587')">AT310587</button>
+          <button onclick="quickSearch('solenoide')">Solenoide</button>
+          <button onclick="quickSearch('John Deere')">John Deere</button>
+          <button onclick="quickSearch('alternador')">Alternador</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><b>01</b><span>Atención personalizada</span></div>
+      <div><b>02</b><span>Repuestos y componentes</span></div>
+      <div><b>03</b><span>Consultas por WhatsApp</span></div>
+      <div><b>04</b><span>Atención a todo el Perú</span></div>
+    </section>
+
+    <section id="categorias" class="section">
+      <div class="section-head">
+        <div><p class="eyebrow dark">CATEGORÍAS</p><h2>Encuentra el repuesto que necesitas</h2></div>
+        <p>Explora nuestro catálogo por tipo de componente.</p>
+      </div>
+      <div class="category-grid">
+        <button class="category-card" onclick="filterCategory('Filtros')"><span>01</span><h3>Filtros</h3><p>Filtración para equipos y motores</p></button>
+        <button class="category-card" onclick="filterCategory('Motor')"><span>02</span><h3>Motor</h3><p>Componentes y repuestos de motor</p></button>
+        <button class="category-card" onclick="filterCategory('Transmisión')"><span>03</span><h3>Transmisión</h3><p>Solenoides y componentes</p></button>
+        <button class="category-card" onclick="filterCategory('Hidráulica')"><span>04</span><h3>Hidráulica</h3><p>Componentes hidráulicos</p></button>
+        <button class="category-card" onclick="filterCategory('Eléctrico')"><span>05</span><h3>Eléctrico</h3><p>Alternadores y arrancadores</p></button>
+        <button class="category-card" onclick="filterCategory('Componentes')"><span>06</span><h3>Componentes</h3><p>Rodamientos y piezas especiales</p></button>
+      </div>
+    </section>
+
+    <section id="productos" class="section products-section">
+      <div class="section-head">
+        <div><p class="eyebrow dark">CATÁLOGO</p><h2>Productos destacados</h2></div>
+        <button class="outline-btn" onclick="showAll()">Ver todos</button>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+      <div id="noResults" class="no-results" hidden>No encontramos productos con esa búsqueda. Escríbenos por WhatsApp y te ayudamos a identificarlo.</div>
+    </section>
+
+    <section id="marcas" class="brands-section">
+      <div class="section">
+        <p class="eyebrow">MARCAS Y APLICACIONES</p>
+        <h2>Trabajamos con referencias para maquinaria pesada</h2>
+        <div class="brand-grid">
+          <span>JOHN DEERE</span><span>CATERPILLAR</span><span>KOMATSU</span><span>VOLVO</span>
+          <span>ZF</span><span>CARRARO</span><span>FLEETGUARD</span><span>OUSIMA</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="about-section">
+      <div class="about-image"></div>
+      <div class="about-copy">
+        <p class="eyebrow dark">SOBRE TERRAKON PARTS</p>
+        <h2>Un aliado para mantener tus equipos trabajando.</h2>
+        <p>Nos especializamos en la comercialización de repuestos y componentes para maquinaria pesada, ayudando a nuestros clientes a encontrar la pieza adecuada según código, aplicación y necesidad.</p>
+        <div class="benefits">
+          <div><b>✓</b><span>Identificación por código y aplicación</span></div>
+          <div><b>✓</b><span>Atención personalizada</span></div>
+          <div><b>✓</b><span>Alternativas según disponibilidad</span></div>
+          <div><b>✓</b><span>Atención y coordinación por WhatsApp</span></div>
+        </div>
+        <a class="yellow-btn" href="https://wa.me/51931869618?text=Hola%20TERRAKON%20PARTS,%20necesito%20ayuda%20para%20identificar%20un%20repuesto." target="_blank">SOLICITAR ASESORÍA</a>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div>
+        <p class="eyebrow">¿NO ENCUENTRAS EL CÓDIGO?</p>
+        <h2>Envíanos el código o una foto del repuesto.</h2>
+        <p>Te ayudamos a revisar la aplicación y disponibilidad.</p>
+      </div>
+      <a class="dark-btn" href="https://wa.me/51931869618?text=Hola%20TERRAKON%20PARTS,%20quiero%20consultar%20por%20un%20repuesto.%20Tengo%20el%20c%C3%B3digo%20o%20una%20foto." target="_blank">ESCRIBIR POR WHATSAPP</a>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <div class="footer-main">
+      <div>
+        <a class="logo footer-logo" href="#inicio"><span class="logo-mark">T</span><span><strong>TERRAKON</strong><small>PARTS</small></span></a>
+        <p>Potencia y respaldo para tu maquinaria.</p>
+      </div>
+      <div><h4>NAVEGACIÓN</h4><a href="#productos">Productos</a><a href="#categorias">Categorías</a><a href="#marcas">Marcas</a><a href="#nosotros">Nosotros</a></div>
+      <div><h4>CONTACTO</h4><a href="https://wa.me/51931869618" target="_blank">+51 931 869 618</a><span>Lima, Perú</span><span>Atención por WhatsApp</span></div>
+      <div><h4>CONSULTAS</h4><p>¿Buscas un repuesto específico?</p><a class="footer-wa" href="https://wa.me/51931869618" target="_blank">Consultar ahora →</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 TERRAKON PARTS. Todos los derechos reservados.</div>
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/51931869618" target="_blank" aria-label="WhatsApp">☏</a>
+  <script src="script.js"></script>
+</body>
+</html>
